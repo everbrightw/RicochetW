@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,18 +10,26 @@
 
     <ImageView
         android:id="@+id/board_image"
-        android:layout_width="match_parent"
-        android:layout_height="455dp"
+        android:layout_width="367dp"
+        android:layout_height="421dp"
         android:layout_weight="0.36"
-        android:background="@drawable/boarda" />
+        android:background="@drawable/robot_silverboardf"
+        fbutton:layout_constraintLeft_toLeftOf="parent"
+        fbutton:layout_constraintRight_toRightOf="parent"
+        fbutton:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginLeft="0dp"
+        fbutton:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="110dp"
+        fbutton:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        fbutton:layout_constraintVertical_bias="0.333"
+        android:layout_marginRight="20dp" />
 
     <info.hoang8f.widget.FButton
         android:id="@+id/left_button"
         android:layout_width="45dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="400dp"
-        android:layout_marginTop="500dp"
-        android:background="@drawable/buttonshape"
+
         android:clickable="true"
         android:shadowColor="#3786A8"
         android:shadowDx="0"
@@ -28,32 +37,36 @@
         android:shadowRadius="5"
 
         android:textColor="#FFFFFF"
-         />
+        tools:text="LEFT"
+        android:layout_marginLeft="15dp"
+        fbutton:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="14dp"
+        fbutton:layout_constraintLeft_toLeftOf="parent" />
+
     <info.hoang8f.widget.FButton
         android:id="@+id/right_button"
         android:layout_width="45dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="400dp"
-        android:layout_marginTop="500dp"
-        android:layout_marginRight="150dp"
-        android:layout_marginLeft="120dp"
-        android:background="@drawable/buttonshape"
+
         android:clickable="true"
         android:shadowColor="#3786A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
         android:textColor="#FFFFFF"
-        />
+        tools:text="RIGHT"
+        fbutton:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="14dp"
+        fbutton:layout_constraintLeft_toRightOf="@+id/left_button"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="250dp"
+        fbutton:layout_constraintRight_toRightOf="parent" />
+
     <info.hoang8f.widget.FButton
         android:id="@+id/up_button"
         android:layout_width="45dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="500dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginRight="150dp"
-        android:layout_marginLeft="60dp"
-        android:background="@drawable/buttonshape"
+
         android:clickable="true"
         android:shadowColor="#3786A8"
         android:shadowDx="0"
@@ -61,16 +74,19 @@
         android:shadowRadius="5"
 
         android:textColor="#FFFFFF"
-        />
+        tools:text="UP"
+        android:layout_marginLeft="15dp"
+        fbutton:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="4dp"
+        fbutton:layout_constraintTop_toBottomOf="@+id/board_image"
+        android:layout_marginBottom="15dp"
+        fbutton:layout_constraintBottom_toTopOf="@+id/left_button" />
+
     <info.hoang8f.widget.FButton
         android:id="@+id/down_button"
         android:layout_width="45dp"
         android:layout_height="33dp"
-        android:layout_marginBottom="500dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginRight="150dp"
-        android:layout_marginLeft="60dp"
-        android:background="@drawable/buttonshape"
+
         android:clickable="true"
         android:shadowColor="#3786A8"
         android:shadowDx="0"
@@ -78,5 +94,97 @@
         android:shadowRadius="5"
 
         android:textColor="#FFFFFF"
-        />
-</FrameLayout>
+        tools:text="DOWN"
+        android:layout_marginTop="4dp"
+        fbutton:layout_constraintTop_toBottomOf="@+id/board_image"
+        android:layout_marginBottom="15dp"
+        fbutton:layout_constraintBottom_toTopOf="@+id/right_button"
+        fbutton:layout_constraintLeft_toRightOf="@+id/up_button"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="250dp"
+        fbutton:layout_constraintHorizontal_bias="0.571"
+        fbutton:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="67dp"
+        android:layout_height="26dp"
+        android:text="Count:"
+
+        android:textColor="@color/fbutton_color_clouds"
+        android:textStyle="bold"
+        fbutton:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
+        fbutton:layout_constraintBottom_toTopOf="@+id/board_image"
+        android:layout_marginLeft="8dp"
+        fbutton:layout_constraintLeft_toLeftOf="parent"
+        fbutton:layout_constraintRight_toLeftOf="@+id/textView2"
+        android:layout_marginRight="100dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="86dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
+        android:text="Time:"
+
+        android:textColor="@color/fbutton_color_clouds"
+        android:textStyle="bold"
+        fbutton:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="0dp"
+        fbutton:layout_constraintBottom_toTopOf="@+id/board_image"
+        android:layout_marginRight="100dp"
+        fbutton:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:clickable="true"
+        fbutton:srcCompat="@drawable/ic_reset"
+        fbutton:layout_constraintLeft_toLeftOf="parent"
+        fbutton:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="2dp"
+        fbutton:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="25dp"
+        fbutton:layout_constraintTop_toBottomOf="@+id/board_image" />
+
+    <TextView
+        android:id="@+id/blue_robot"
+        android:layout_width="21dp"
+        android:layout_height="25dp"
+        android:text="BLUECAR"
+        tools:layout_editor_absoluteY="265dp"
+        tools:layout_editor_absoluteX="182dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        fbutton:srcCompat="@drawable/blue_robot"
+        android:layout_marginLeft="45dp"
+        fbutton:layout_constraintLeft_toLeftOf="@+id/board_image"
+        fbutton:layout_constraintTop_toTopOf="@+id/board_image"
+        android:layout_marginTop="238dp"
+        android:layout_marginRight="20dp"
+        fbutton:layout_constraintRight_toRightOf="@+id/board_image"
+        fbutton:layout_constraintBottom_toBottomOf="@+id/board_image"
+        android:layout_marginBottom="0dp" />
+
+    <ImageView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        fbutton:layout_constraintLeft_toLeftOf="@+id/board_image"
+        android:layout_marginRight="30dp"
+        fbutton:layout_constraintRight_toRightOf="@+id/board_image"
+        fbutton:layout_constraintBottom_toBottomOf="@+id/board_image"
+        android:layout_marginBottom="35dp"
+        fbutton:layout_constraintTop_toTopOf="@+id/board_image"
+        android:layout_marginTop="8dp" />
+
+</android.support.constraint.ConstraintLayout>
