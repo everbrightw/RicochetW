@@ -7,7 +7,8 @@ package com.everbright.wangyusen.ricochetw;
 public class Robot {
     private String color;
     private int currentX;
-    private int cureentY;
+    private int currntY;
+    private String currentTask;// target destination
     Robot(){
 
     }
@@ -19,4 +20,5 @@ public class Robot {
     public String getColor() {
         return color;
     }
+
 }

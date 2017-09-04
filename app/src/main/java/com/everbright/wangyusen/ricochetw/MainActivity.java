@@ -1,22 +1,17 @@
 package com.everbright.wangyusen.ricochetw;
 
 import android.content.Context;
-import android.graphics.PixelFormat;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import info.hoang8f.widget.FButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,16 +24,17 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeMoveButtons();
-        initializeBlueRobot();
-
-        blue_robot.setLayoutParams(getParams(0,0));
+//        initializeBlueRobot();
+//        blue_robot.setLayoutParams(getParams(0,0));
 //        ImageView test = (ImageView) findViewById(R.id.test);
-        ImageView test = (ImageView) findViewById(R.id.imageView2);
-        Log.i("testx", String.valueOf(test.getLayoutParams().height));
-        Log.i("tesxy", String.valueOf(test.getLayoutParams().width));
+//        ImageView test = (ImageView) findViewById(R.id.red_robot);
+//        test.setLayoutParams(getParams(0,0));
+
+
 //        MainActivity.this.addContentView(test, params);
 
     }
@@ -61,25 +57,39 @@ public class MainActivity extends AppCompatActivity {
         moveDown.setCornerRadius(0);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    public void initializeBlueRobot(){
-        blue_robot  = (TextView) findViewById(R.id.blue_robot);
-        blue_robot.setTypeface(FontManager.getTypeface(this, FontManager.FONTAWESOME));
-        blue_robot.setText(R.string.fa_icon_car);
-        blue_robot.setTextColor(this.getColor(R.color.fbutton_default_color));
-
-    }
+//    @RequiresApi(api = Build.VERSION_CODES.M)
+//    public void initializeBlueRobot(){
+//
+//        blue_robot  = (TextView) findViewById(R.id.blue_robot);
+//        blue_robot.setTypeface(FontManager.getTypeface(this, FontManager.FONTAWESOME));
+//        blue_robot.setText(R.string.fa_icon_car);
+//        blue_robot.setTextColor(this.getColor(R.color.fbutton_default_color));
+//
+//    }
 
     public ConstraintLayout.LayoutParams getParams(int xPosition, int yPosition){
-        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(350,350);
 
-//        params.rightToRight = R.id.imageView;
-//        params.topToTop = R.id.imageView;
-//        params.leftToLeft = R.id.imageView;
-//        params.bottomToBottom = R.id.imageView;
-        params.height = 1600;
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(0,0);
+        params.rightToRight = R.id.board_image;
+        params.topToTop = R.id.board_image;
+        params.leftToLeft = R.id.board_image;
+        params.bottomToBottom = R.id.board_image;
+        params.topToTop = 0;
+        params.leftToLeft = 0;
+        params.rightToRight = 0;
+        params.bottomToBottom = 0;
+        params.horizontalBias = 1.0f;
+        params.verticalBias = 0.6f;
+        params.width = dpToPx(28);
+        params.height = dpToPx(28);
+
+
 
         return params;
+    }
+    public int dpToPx(int dp) {
+        DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
     public View initializeView(Context context, int mLayout){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

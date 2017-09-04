@@ -16,26 +16,24 @@
         android:background="@drawable/robot_silverboardf"
         fbutton:layout_constraintLeft_toLeftOf="parent"
         fbutton:layout_constraintRight_toRightOf="parent"
-        fbutton:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginLeft="0dp"
+        fbutton:layout_constraintHorizontal_bias="0.375"
+        android:layout_marginLeft="12dp"
         fbutton:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="110dp"
         fbutton:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="30dp"
-        fbutton:layout_constraintVertical_bias="0.333"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="13dp"
+        fbutton:layout_constraintVertical_bias="0.666" />
 
     <info.hoang8f.widget.FButton
         android:id="@+id/left_button"
         android:layout_width="45dp"
         android:layout_height="33dp"
-
         android:clickable="true"
         android:shadowColor="#3786A8"
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-
         android:textColor="#FFFFFF"
         tools:text="LEFT"
         android:layout_marginLeft="15dp"
@@ -152,39 +150,42 @@
         android:layout_marginTop="25dp"
         fbutton:layout_constraintTop_toBottomOf="@+id/board_image" />
 
-    <TextView
-        android:id="@+id/blue_robot"
-        android:layout_width="21dp"
-        android:layout_height="25dp"
-        android:text="BLUECAR"
-        tools:layout_editor_absoluteY="265dp"
-        tools:layout_editor_absoluteX="182dp" />
-
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
         fbutton:srcCompat="@drawable/blue_robot"
-        android:layout_marginLeft="45dp"
+        android:layout_marginLeft="0dp"
         fbutton:layout_constraintLeft_toLeftOf="@+id/board_image"
-        fbutton:layout_constraintTop_toTopOf="@+id/board_image"
-        android:layout_marginTop="238dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="0dp"
         fbutton:layout_constraintRight_toRightOf="@+id/board_image"
         fbutton:layout_constraintBottom_toBottomOf="@+id/board_image"
-        android:layout_marginBottom="0dp" />
+        android:layout_marginBottom="79dp"
+        fbutton:layout_constraintHorizontal_bias="0.206" />
 
     <ImageView
         android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="5dp"
         fbutton:layout_constraintLeft_toLeftOf="@+id/board_image"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="5dp"
         fbutton:layout_constraintRight_toRightOf="@+id/board_image"
         fbutton:layout_constraintBottom_toBottomOf="@+id/board_image"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="5dp"
         fbutton:layout_constraintTop_toTopOf="@+id/board_image"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="5dp"
+        fbutton:layout_constraintHorizontal_bias="1.0"
+        fbutton:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/red_robot"
+        android:layout_width="23dp"
+        android:layout_height="28dp"
+        fbutton:srcCompat="@drawable/red_robot"
+        android:layout_marginLeft="71dp"
+        fbutton:layout_constraintLeft_toLeftOf="@+id/board_image"
+        fbutton:layout_constraintTop_toTopOf="@+id/board_image"
+        android:layout_marginTop="157dp" />
 
 </android.support.constraint.ConstraintLayout>

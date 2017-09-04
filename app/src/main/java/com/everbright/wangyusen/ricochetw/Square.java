@@ -9,10 +9,10 @@ public class Square {
     public boolean downWall;
     public boolean leftWall;
     public boolean rightWall;
-    public boolean hasRobot;
+    public Robot currRobot;
     private int x;
     private int y;
-
+    public String destination;
     Square(int x, int y){
         this.x = x;
         this.y = y;

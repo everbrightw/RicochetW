@@ -5,7 +5,9 @@ package com.everbright.wangyusen.ricochetw;
  */
 
 public class Map {
-    public static Square[][] map = new Square[16][16];
+    //Todo add a button to randomize robots 2. randomize function 3 . reset function 4. Robot::moveleftrightupdown 5. bool return true hasArrived() 6. Sqaure::hasWall() 7.
+
+    public Square[][] map = new Square[16][16];
 
     public static void initializeMap(Square[][] map){
         for (int x = 0; x< 16; x ++){
@@ -14,5 +16,18 @@ public class Map {
             }
         }
     }
+
+
+    public void randomizeRobots(Square[][] map){
+
+    }
+    public void resetRobots(Square[][] map){
+
+    }
+
+
+
+
+
 
 }
